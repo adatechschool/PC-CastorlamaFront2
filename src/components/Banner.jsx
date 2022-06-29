@@ -27,7 +27,7 @@ function Banner() {
                 </Col>
                 <Col className="colbanner d-flex align-items-center justify-content-center"><hr className="line"/></Col>
                 <Col className="colbanner">
-                    <h1 className="banner">BRICABROC</h1>
+                    <h1 className="banner">CASTORLAMA</h1>
                 </Col>
                 <Col className="colbanner d-flex align-items-center justify-content-center"><span className="line"></span></Col>
                 <Col xs={3}  className="colbanner d-flex align-items-center justify-content-center">

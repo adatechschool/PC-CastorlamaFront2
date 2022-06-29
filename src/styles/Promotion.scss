@@ -5,3 +5,34 @@
     background-position:center;
     height:800px;
 }
+
+.promotion-encart {
+    background-color:  #B5C99A;
+    width: 25%;
+    height: 40%;
+}
+
+h3 {
+    text-align: center;
+    padding-top: 5rem ;
+    font-family:'Abril Fatface'
+}
+
+.btn-promotion {
+    padding-top: 2rem ;
+}
+
+.promotion-decouvrir {
+    background-color: #FFFAE5 !important;
+    text-align: center;
+    color: black !important;
+    border-color: #FFFAE5!important;
+    border-radius: 0% !important;
+}
+
+.promotion-decouvrir:hover {
+    background-color: #CFE1B9 !important;
+    border-color:#CFE1B9 !important;
+}
+
+
