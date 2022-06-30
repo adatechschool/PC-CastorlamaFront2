@@ -1,9 +1,17 @@
 // CSS 
 @import "~bootstrap/scss/bootstrap";
+
 //boostrap 
 .card {
     border: 1px solid black !important;
     padding: 10px !important;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content:baseline;
+    
+    
 }
 
 
@@ -22,13 +30,13 @@
 .btn_card {
     font-size: 10px !important;
     border-color: #B5C99A !important;
-	background-color: #B5C99A !important;
+    background-color: #B5C99A !important;
     color: black !important;
     height: 40px !important;
 }
 
 .btn_card:hover {
-	background-color: white !important;
+    background-color: white !important;
 }
 
 .info_card {
@@ -36,16 +44,28 @@
     justify-content: space-between;
 }
 
-.prix{
+.prix {
     margin-top: 0.5rem;
 }
 
+.img_card {
+   width: 100% ;
+   height: 250px;
+   overflow: hidden;
+}
+
 .container_card {
-margin-left: 2rem;
-margin-right: 2rem;
-margin-bottom: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: start;
+    position: relative;
 
 }
+
 
 .card:hover {
     background-color: #CFE1B9;
