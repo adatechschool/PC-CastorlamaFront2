@@ -14,12 +14,12 @@
     
 }
 
-
 .titre_card {
     margin-top: 3rem !important;
     margin-bottom: 3rem !important;
     font-family: 'Abril Fatface';
-    margin-left: 2rem !important;
+    // margin-left: 2rem !important;
+    text-align : center;
 }
 
 .type_card {
@@ -55,13 +55,13 @@
 }
 
 .container_card {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: start;
+    justify-content: center;
     position: relative;
 
 }

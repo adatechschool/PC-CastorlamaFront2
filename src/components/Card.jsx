@@ -89,7 +89,7 @@ const data = [
     },
 
     {
-        id: 5,
+        id: 6,
         title: "Tabouret",
         type: "tabouret",
         price: 15,
@@ -105,7 +105,7 @@ const data = [
         edited_at: "2022-06-29T14:40:58.153Z"
     },
     {
-        id: 6,
+        id: 7,
         title: "Tabouret",
         type: "tabouret",
         price: 15,
@@ -121,8 +121,24 @@ const data = [
         edited_at: "2022-06-29T14:40:58.153Z"
     },
     {
-        id: 5,
+        id: 8,
         title: "Tabouret",
+        type: "tabouret",
+        price: 15,
+        description: "Superbe tabouret  HYPER confortable",
+        material: [
+            "metal"
+        ],
+        color: "vert",
+        size: "h:90cm l:45cm p:47cm",
+        accepted: false,
+        image_url: "https://static.songmics.fr/image/Product/PCT98G/Arbre-a-chat-164-cm-gris-fonce-PCT98G-4.jpg",
+        created_at: "2022-06-29T14:40:58.153Z",
+        edited_at: "2022-06-29T14:40:58.153Z"
+    },
+    {
+        id: 9,
+        title: "Canapêche",
         type: "tabouret",
         price: 15,
         description: "Superbe tabouret  HYPER confortable",
@@ -177,18 +193,18 @@ const data = [
 const Cards = () => {
     return (
         <div>
-<h1 className='titre_card'>Les dernières trouvailles</h1>
-        <div className='container_card'>
-            {/* <h1 className='titre_card'>Les dernières trouvailles</h1> */}
-            { 
-                data.map(({ id, title, price, type, image_url }) => {
-                    return (
+            <h1 className='titre_card'>Les dernières trouvailles</h1>
+            <div className='container_card'>
+                {/* <h1 className='titre_card'>Les dernières trouvailles</h1> */}
+                {
+                    data.map(({ id, title, price, type, image_url }) => {
+                        return (
 
                             <Card key={id} className='card' style={{ width: '25rem' }}>
                                 {/* Type de meuble */}
                                 <Card.Title className='type_card'>{type}</Card.Title>
                                 <div className="img_card align-items-center justify-content-center">
-                                <Card.Img variant="top" src={image_url} />
+                                    <Card.Img variant="top" src={image_url} />
                                 </div >
                                 <Card.Body>
                                     {/* Titre du meuble*/}
@@ -203,13 +219,13 @@ const Cards = () => {
                                     </div>
                                 </Card.Body>
                             </Card>
-                            
-                    )
-                })
-            }
 
-        </div>
-        </div>  )
+                        )
+                    })
+                }
+
+            </div>
+        </div>)
 }
 
 export default Cards;
