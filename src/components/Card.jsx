@@ -1,10 +1,9 @@
-import React, {useState} from 'react'
-import Banner from './components/Banner.jsx'
-import Promotion from './components/Promotion.jsx'
-import Cards from './components/Cards.jsx'
-import Product from './components/Product.jsx'
+import '../styles/Card.scss'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import Table from '../assets/table.png'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const data = [
     {
@@ -90,7 +89,7 @@ const data = [
     },
 
     {
-        id: 5,
+        id: 6,
         title: "Tabouret",
         type: "tabouret",
         price: 15,
@@ -106,7 +105,7 @@ const data = [
         edited_at: "2022-06-29T14:40:58.153Z"
     },
     {
-        id: 6,
+        id: 7,
         title: "Tabouret",
         type: "tabouret",
         price: 15,
@@ -122,8 +121,24 @@ const data = [
         edited_at: "2022-06-29T14:40:58.153Z"
     },
     {
-        id: 5,
+        id: 8,
         title: "Tabouret",
+        type: "tabouret",
+        price: 15,
+        description: "Superbe tabouret  HYPER confortable",
+        material: [
+            "metal"
+        ],
+        color: "vert",
+        size: "h:90cm l:45cm p:47cm",
+        accepted: false,
+        image_url: "https://static.songmics.fr/image/Product/PCT98G/Arbre-a-chat-164-cm-gris-fonce-PCT98G-4.jpg",
+        created_at: "2022-06-29T14:40:58.153Z",
+        edited_at: "2022-06-29T14:40:58.153Z"
+    },
+    {
+        id: 9,
+        title: "Canapêche",
         type: "tabouret",
         price: 15,
         description: "Superbe tabouret  HYPER confortable",
@@ -139,28 +154,57 @@ const data = [
     }
 ]
 
-//component creation 
 
-const App = () => {
-    const [show,setShow]=useState(true)
+
+
+
+
+
+// const Portfolio = () => {
+//     return (
+//         <section id="portfolio">
+//             <h5>MES PROJETS</h5>
+//             <div className='container portfolio__container'>
+//                 {
+//                     data.map(({ box, id, image, title, github, image_url }) => {
+//                         return (
+//                             <article key={id} className={box}>
+//                                 <div className='portfolio__item-image'>
+//                                     <img src={image_url} alt="" />
+//                                 </div>
+//                                 <h3>{title}</h3>
+//                                 <div className='portfolio__item-cta'>
+//                                     <a href={github} className='btn-new' target='_blank'> ⇨ Go </a>
+//                                 </div>
+//                             </article>
+
+//                         )
+
+//                     })
+//                 }
+
+//             </div>
+//         </section>
+//     )
+// }
+
+
+
+const Cards = () => {
     return (
         <div>
-            
-           <Banner></Banner>
-           {show?<Promotion></Promotion>:null }
-            {show?<Cards>
             <h1 className='titre_card'>Les dernières trouvailles</h1>
-        <div className='container_card'>
-            {/* <h1 className='titre_card'>Les dernières trouvailles</h1> */}
-            { 
-                data.map(({ id, title, price, type, image_url }) => {
-                    return (
+            <div className='container_card'>
+                {/* <h1 className='titre_card'>Les dernières trouvailles</h1> */}
+                {
+                    data.map(({ id, title, price, type, image_url }) => {
+                        return (
 
-                            <Card key={id} className='card' style={{ width: '25rem' }} onClick={()=>setShow(!show)}>
+                            <Card key={id} className='card' style={{ width: '25rem' }}>
                                 {/* Type de meuble */}
                                 <Card.Title className='type_card'>{type}</Card.Title>
                                 <div className="img_card align-items-center justify-content-center">
-                                <Card.Img variant="top" src={image_url} />
+                                    <Card.Img variant="top" src={image_url} />
                                 </div >
                                 <Card.Body>
                                     {/* Titre du meuble*/}
@@ -175,17 +219,13 @@ const App = () => {
                                     </div>
                                 </Card.Body>
                             </Card>
-                            
-                    )
-                })
-            }
 
-        </div>
-            </Cards>:null}
-            {!show?<Product></Product>:null}
-        
-        </div>
-    );
+                        )
+                    })
+                }
+
+            </div>
+        </div>)
 }
 
-export default App;
+export default Cards;
