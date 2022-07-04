@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl' 
 import Basket from '../assets/basket2.png'
 
-function Banner() {
+function Banner(props) {
 	return (
 		<div>
 		<Row className="pt-3">

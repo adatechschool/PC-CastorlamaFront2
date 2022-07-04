@@ -14,9 +14,8 @@ const App = () => {
         <div>
             <Banner></Banner>
             {show ? <Promotion></Promotion> : null}
-            {show ? <Cards etat={true} toto={() => setShow(!show)} ></Cards> : null}
-            {!show ? <Product></Product> : null}
-
+            {show ? <Cards toto={() => setShow(!show)} ></Cards> : null}
+            {!show ? <Product tata={() => setShow(!show)}></Product> : null}
         </div>
     ); 
 }

@@ -1,3 +1,4 @@
+import React from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Carousel from 'react-bootstrap/Carousel'
@@ -8,10 +9,11 @@ import '../styles/Product.scss'
 import Button from 'react-bootstrap/Button'
 
 
-function Product () {
+function Product (props) {
 
 return (
     <Row className="mt-5">
+       <div className="ms-5 mb-3 accueil" onClick={props.tata}>Accueil</div>
         <Col className="ms-5">
         <Carousel>
   <Carousel.Item>
@@ -75,10 +77,14 @@ return (
                 </Col>
             </Row>
             <Row className="mt-5 d-flex justify-content-start">
+              <div className='btn-product'>
                 <Button variant="outline-success addtobasket">AJOUTER AU PANIER</Button> 
+                <Button variant="outline-success contactsaler">CONTACTER LE VENDEUR</Button> 
+                </div>
             </Row>
         </Col>
     </Row>
+
 )
 
 }
