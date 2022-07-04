@@ -6,6 +6,8 @@ import table3 from '../assets/table3.png'
 import table4 from '../assets/table4.png'
 import '../styles/Product.scss'
 import Button from 'react-bootstrap/Button'
+
+
 function Product () {
 
 return (
@@ -21,8 +23,6 @@ return (
     />
     </div>
     <Carousel.Caption>
-      <h3>Table</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -35,8 +35,6 @@ return (
     </div>
 
     <Carousel.Caption>
-      <h3>Table</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -48,8 +46,6 @@ return (
     />
     </div>
     <Carousel.Caption>
-      <h3>Table</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
