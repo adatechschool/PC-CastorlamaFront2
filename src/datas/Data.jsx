@@ -82,7 +82,7 @@ export const data =  [
     },
 
     {
-        id: 5,
+        id: 6,
         title: "Tabouret",
         type: "tabouret",
         price: 15,
@@ -98,7 +98,7 @@ export const data =  [
         edited_at: "2022-06-29T14:40:58.153Z"
     },
     {
-        id: 6,
+        id: 7,
         title: "Tabouret",
         type: "tabouret",
         price: 15,
@@ -114,7 +114,7 @@ export const data =  [
         edited_at: "2022-06-29T14:40:58.153Z"
     },
     {
-        id: 5,
+        id: 8,
         title: "Tabouret",
         type: "tabouret",
         price: 15,

@@ -15,12 +15,12 @@ const Cards = (props) => {
                 {
                     data.map(({ id, title, price, type, image_url }) => {
                         return (
-                            <div className='foo' onClick={props.toto}>
+                            <div className='foo'>
                                 <Card key={id} className='card' style={{ width: '25rem' }} >
                                     {/* Type de meuble */}
                                     <Card.Title className='type_card'>{type}</Card.Title>
                                     <div className="img_card align-items-center justify-content-center">
-                                        <Card.Img variant="top" src={image_url} />
+                                        <Card.Img variant="top" src={image_url} onClick={props.toto}/>
                                     </div >
                                     <Card.Body>
                                         {/* Titre du meuble*/}
@@ -31,7 +31,7 @@ const Cards = (props) => {
                                             <Card.Text className='prix'>
                                                 {price}€
                                             </Card.Text>
-                                            <Button className='btn_card' variant="primary">ACHETER</Button>
+                                            <Button className='btn_card' variant="primary" onClick={()=> props.onAdd(data[id-1])}>ACHETER</Button>
                                         </div>
                                     </Card.Body>
                                 </Card>
