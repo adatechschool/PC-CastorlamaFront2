@@ -1,6 +1,7 @@
 # PC-CastorlamaFront2
 
 ## Process de setup de front
+<img width="615" alt="Capture d’écran 2022-07-04 à 16 15 05" src="https://user-images.githubusercontent.com/98778180/177172477-29a22b1b-d010-4253-91a0-371311d462e9.png">
 
 Chaque dev doit réaliser le setup sur sa propre machine : 
 
