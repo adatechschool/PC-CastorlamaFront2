@@ -1,43 +1,50 @@
+import React from 'react'
 import '../styles/Card.scss'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import Table from '../assets/table.png'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-
-// const Portfolio = () => {
-//     return (
-//         <section id="portfolio">
-//             <h5>MES PROJETS</h5>
-//             <div className='container portfolio__container'>
-//                 {
-//                     data.map(({ box, id, image, title, github, image_url }) => {
-//                         return (
-//                             <article key={id} className={box}>
-//                                 <div className='portfolio__item-image'>
-//                                     <img src={image_url} alt="" />
-//                                 </div>
-//                                 <h3>{title}</h3>
-//                                 <div className='portfolio__item-cta'>
-//                                     <a href={github} className='btn-new' target='_blank'> ⇨ Go </a>
-//                                 </div>
-//                             </article>
-
-//                         )
-
-//                     })
-//                 }
-
-//             </div>
-//         </section>
-//     )
-// }
+import { data } from '../datas/Data'
 
 
+const Cards = (props) => {
 
-const Cards = ({ children }) => {
     return (
-        <div>{ children }</div>  )
+        <div>
+            <h1 className='titre_card'>Les dernières trouvailles</h1>
+            <div className='container_card'>
+                {/* <h1 className='titre_card'>Les dernières trouvailles</h1> */}
+                {
+                    data.map(({ id, title, price, type, image_url }) => {
+                        return (
+                            <div className='foo'>
+                                <Card key={id} className='card' style={{ width: '25rem' }} >
+                                    {/* Type de meuble */}
+                                    <Card.Title className='type_card'>{type}</Card.Title>
+                                    <div className="img_card align-items-center justify-content-center">
+                                        <Card.Img variant="top" src={image_url} onClick={props.toto}/>
+                                    </div >
+                                    <Card.Body>
+                                        {/* Titre du meuble*/}
+                                        <Card.Text>
+                                            {title}
+                                        </Card.Text>
+                                        <div className='info_card'>
+                                            <Card.Text className='prix'>
+                                                {price}€
+                                            </Card.Text>
+                                            <Button className='btn_card' variant="primary" onClick={()=> props.onAdd(data[id-1])}>ACHETER</Button>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                        )
+                    })
+                }
+
+            </div>
+        </div>)
 }
+
+
+
 
 export default Cards;

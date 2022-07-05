@@ -1,0 +1,57 @@
+// CSS 
+@import "~bootstrap/scss/bootstrap";
+
+.carouselimg {
+    width:100%;
+    height:750px;
+    overflow:hidden;
+
+}
+
+.titreproduct {
+    padding-top:0;
+}
+
+.blibli {
+    background-color:#B5C99A;
+}
+
+h4 {
+    font-family:'Abril Fatface';
+}
+
+.addtobasket {
+    width:400px !important;
+    font-size:1.3em !important;
+    color:white !important;
+    background-color:black !important ;
+    font-family:'Abril Fatface'!important;
+    margin-bottom: 1.3rem;
+    margin-top: 2rem;
+}
+
+.contactsaler{
+    width:400px !important;
+    font-size:1.3em !important;
+    color:black !important;
+    background-color:white !important ;
+    border: 1px solid black;
+    font-family:'Abril Fatface'!important;
+}
+
+.btn-product{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.accueil{
+    color: black!important;
+    cursor: pointer;
+}
+
+.accueil:hover{
+    color: #B5C99A !important;
+    cursor: pointer;
+}
+
