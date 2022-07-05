@@ -8,8 +8,8 @@ import Basket from './components/Basket.jsx'
 
 const App = () => {
 
-    const [show, setShow] = useState(true)
-   // const [showBasket, setShowBasket] = useState(true)
+    const [showBasket, setShowBasket] = useState(false)
+    const[showProduct, setShowProduct] =useState(false)
     const [cartItems, setCartItems] =useState([]);
     const onAdd=(product) => {
        const exist = cartItems.find(x => x.id ===product.id); 
@@ -33,11 +33,11 @@ const App = () => {
     }
     return (
         <div>
-            <Banner countCartItems={cartItems.length} tonton={() => setShow(!show)}></Banner>
-            {show ? <Promotion></Promotion> : null}
-            {show ? <Cards toto={() => setShow(!show)} onAdd={onAdd}></Cards> : null}
-            {!show ? <Product tata={() => setShow(!show)}></Product> : null}
-            {!show?<Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}></Basket>:null}
+            <Banner countCartItems={cartItems.length} tonton={() => setShowBasket(!showBasket)}></Banner>
+            {!showBasket && !showProduct ? <Promotion></Promotion> : null}
+            {!showBasket && !showProduct ? <Cards toto={() => setShowProduct(!showProduct)} onAdd={onAdd}></Cards> : null}
+            {!showBasket && showProduct? <Product tata={() => setShowProduct(!showProduct)}></Product> : null}
+            {showBasket && !showProduct?<Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}></Basket>:null}
         </div>
     ); 
 }
