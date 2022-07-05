@@ -9,6 +9,7 @@ import Basket from './components/Basket.jsx'
 const App = () => {
 
     const [show, setShow] = useState(true)
+   // const [showBasket, setShowBasket] = useState(true)
     const [cartItems, setCartItems] =useState([]);
     const onAdd=(product) => {
        const exist = cartItems.find(x => x.id ===product.id); 
@@ -32,11 +33,11 @@ const App = () => {
     }
     return (
         <div>
-            <Banner></Banner>
+            <Banner countCartItems={cartItems.length} tonton={() => setShow(!show)}></Banner>
             {show ? <Promotion></Promotion> : null}
             {show ? <Cards toto={() => setShow(!show)} onAdd={onAdd}></Cards> : null}
             {!show ? <Product tata={() => setShow(!show)}></Product> : null}
-            <Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}></Basket>
+            {!show?<Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}></Basket>:null}
         </div>
     ); 
 }
