@@ -35,7 +35,7 @@ function Banner(props) {
                     <Button variant="outline-success vendre">VENDRE</Button>
                     <Button variant="outline-success connection">SE CONNECTER</Button>
                 </Col>
-                <Col className="colbanner d-flex align-items-center justify-content-center"><img src={Basket} onClick={props.tonton}/>
+                <Col className="colbanner d-flex align-items-center justify-content-center"><img className="imagepanier" src={Basket} onClick={props.tonton}/>
                 {countCartItems? (
                     <button className="badge">{countCartItems}</button>
                 ): (
