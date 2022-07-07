@@ -9,7 +9,7 @@ const Cards = (props) => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
-  
+
     // Remarque : le tableau vide de dépendances [] indique
     // que useEffect ne s’exécutera qu’une fois, un peu comme
     // componentDidMount()
@@ -18,9 +18,7 @@ const Cards = (props) => {
         .then(res => res.json())
         .then(
           (result) => {
-            console.log(result);
             setIsLoaded(true);
-            console.log("titi")
             setItems(result.data);
 
           },
@@ -33,7 +31,7 @@ const Cards = (props) => {
           }
         )
     }, [])
-  
+
     if (error) {
       return <div>Erreur : {error.message}</div>;
     } else if (!isLoaded) {
@@ -50,7 +48,7 @@ const Cards = (props) => {
                                     {/* Type de meuble */}
                                     <Card.Title className='type_card'>{item.name}</Card.Title>
                                     <div className="img_card align-items-center justify-content-center">
-                                        <Card.Img variant="top" src={item.image_url} onClick={props.toto}/>
+                                        <Card.Img variant="top" src={item.image_url[0]} onClick={props.toto}/>
                                     </div >
                                     <Card.Body>
                                         {/* Titre du meuble*/}
@@ -72,7 +70,7 @@ const Cards = (props) => {
 
             </div>
         </div>)
-  
+
 }
 }
 
