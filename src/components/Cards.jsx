@@ -3,6 +3,7 @@ import '../styles/Card.scss'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { data } from '../datas/Data'
+import { getByTestId } from '@testing-library/react'
 
 
 const Cards = (props) => {
@@ -14,10 +15,11 @@ const Cards = (props) => {
     // que useEffect ne s’exécutera qu’une fois, un peu comme
     // componentDidMount()
     useEffect(() => {
-      fetch("http://localhost:3001/api/furnitures")
+      fetch("http://localhost:3001/api/furnitures/")
         .then(res => res.json())
         .then(
           (result) => {
+            console.log(result);
             setIsLoaded(true);
             setItems(result.data);
 
@@ -44,11 +46,11 @@ const Cards = (props) => {
                 {/* <h1 className='titre_card'>Les dernières trouvailles</h1> */}
                 {items.map(item => (
                             <div className='foo'>
-                                <Card key={item.id} className='card' style={{ width: '25rem' }} >
+                                <Card key={item.id}  className='card' style={{ width: '25rem' }} >
                                     {/* Type de meuble */}
                                     <Card.Title className='type_card'>{item.name}</Card.Title>
                                     <div className="img_card align-items-center justify-content-center">
-                                        <Card.Img variant="top" src={item.image_url[0]} onClick={props.toto}/>
+                                        <Card.Img id={item.id} variant="top" src={item.image_url[0]} onClick={props.toto}/>
                                     </div >
                                     <Card.Body>
                                         {/* Titre du meuble*/}

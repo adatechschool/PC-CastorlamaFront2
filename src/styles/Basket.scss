@@ -1,0 +1,102 @@
+// CSS 
+@import "~bootstrap/scss/bootstrap";
+//boostrap 
+
+.paniertitre {
+    width:800px;
+    padding: 3em;
+    display:flex;
+    justify-content: space-around;
+
+}
+
+.paniergris {
+    color:lightgrey;
+}
+
+.panieritems {
+    padding-left:5em;
+}
+
+.recapitulatif {
+    font-family: 'Abril Fatface';
+    margin-bottom:1em;
+}
+
+.panierimage {
+    width:20% !important;
+
+}
+
+.panieritem {
+    border: 1px solid lightgrey;
+    padding: 2em;
+    margin-bottom:2em;
+
+}
+
+.itemtitre {
+    font-family: 'Abril Fatface';
+}
+
+.add {
+    width:40px;
+    border-color: #B5C99A !important;
+    background-color: #B5C99A !important;
+    color: black !important;
+    margin-right:0.5em;
+    font-weight: bold;
+    font-size:1.5em;
+    border-width: 0px;
+}
+
+.add:hover {
+    border-color:#CFE1B9!important;
+    background-color:#CFE1B9 !important;
+}
+.remove {
+    width:40px;
+    border-color: #B5C99A !important;
+    background-color: #B5C99A !important;
+    color: black !important;
+    font-weight: bold;
+    font-size:1.5em;
+    border-width: 0px;
+}
+
+.remove:hover {
+    border-color:#CFE1B9!important;
+    background-color:#CFE1B9 !important;
+}
+
+.recapcol {
+    margin-left:80px;
+    background-color: rgba(211, 211, 211, 0.237);
+    margin-right:5em;
+    height:500px;
+}
+
+.prixtotal {
+    font-family: 'Abril Fatface';
+}
+
+.divrecap {
+    width:100%;
+    margin-left:30px;
+}
+
+.payer {
+    width:200px !important;
+    font-size:1.3em !important;
+    color:white !important;
+    background-color:black !important ;
+    font-family:'Abril Fatface'!important;
+    display:flex;
+    justify-content:flex-end;
+    align-items: end !important;
+    margin-right:30px;
+}
+
+.divpayer {
+    justify-content: space-between;
+}
