@@ -11,6 +11,10 @@ const App = () => {
     const [showBasket, setShowBasket] = useState(false)
     const[showProduct, setShowProduct] =useState(false)
     const [cartItems, setCartItems] =useState([]);
+    const [idProduct, setIdProduct]=useState();
+    const getIdProduct=(id) => {
+        setIdProduct(id);
+    }
     const onAdd=(product) => {
        const exist = cartItems.find(x => x.id ===product.id); 
        if(exist) {
@@ -35,8 +39,8 @@ const App = () => {
         <div>
             <Banner countCartItems={cartItems.length} tonton={() => setShowBasket(!showBasket)}></Banner>
             {!showBasket && !showProduct ? <Promotion></Promotion> : null}
-            {!showBasket && !showProduct ? <Cards toto={() => setShowProduct(!showProduct)} onAdd={onAdd}></Cards> : null}
-            {!showBasket && showProduct? <Product tata={() => setShowProduct(!showProduct)}></Product> : null}
+            {!showBasket && !showProduct ? <Cards toto={() => setShowProduct(!showProduct)} onAdd={onAdd} getIdProduct={getIdProduct}></Cards> : null}
+            {!showBasket && showProduct? <Product tata={() => setShowProduct(!showProduct)} getIdProduct={getIdProduct} idProduct={idProduct}></Product> : null}
             {showBasket && !showProduct?<Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}></Basket>:null}
         </div>
     ); 

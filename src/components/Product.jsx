@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Carousel from 'react-bootstrap/Carousel'
@@ -10,7 +10,45 @@ import Button from 'react-bootstrap/Button'
 
 
 function Product (props) {
+  const{idProduct}=props;
+  console.log(idProduct);
+  const [error, setError] = useState(null);
+  const [isLoadedProduct, setIsLoadedProduct] = useState(false);
+  const [produit, setProduit] = useState({});
 
+  // Remarque : le tableau vide de dépendances [] indique
+  // que useEffect ne s’exécutera qu’une fois, un peu comme
+  // componentDidMount()
+
+  useEffect(() => {
+    if (idProduct) {
+    fetch(`http://localhost:3001/api/furnitures/${idProduct}`)
+    
+      .then(resProduct => resProduct.json())
+      .then(
+        (resultProduct) => {
+          
+          console.log(resultProduct.data);
+          console.log(produit);
+          setProduit(resultProduct.data);   
+          setIsLoadedProduct(true);
+        },
+        // Remarque : il faut gérer les erreurs ici plutôt que dans
+        // un bloc catch() afin que nous n’avalions pas les exceptions
+        // dues à de véritables bugs dans les composants.
+        (error) => {
+          setIsLoadedProduct(true);
+          setError(error);
+        }
+      )
+    }
+  }, [])
+
+  if (error) {
+    return <div>Erreur : {error.message}</div>;
+  } else if (!isLoadedProduct) {
+    return <div>Chargement...</div>;
+  } else {
 return (
     <Row className="mt-5">
        <div className="ms-5 mb-3 accueil" onClick={props.tata}>Accueil</div>
@@ -20,7 +58,7 @@ return (
     <div className="carouselimg">
     <img
       className="d-block w-100"
-      src={table2}
+      src={produit.image_url[0]}
       alt="First slide"
     />
     </div>
@@ -31,7 +69,7 @@ return (
     <div className="carouselimg">
     <img
       className="d-block w-100"
-      src={table3}
+      src={produit.image_url[1]}
       alt="Second slide"
     />
     </div>
@@ -43,7 +81,7 @@ return (
     <div className="carouselimg">
     <img
       className="d-block w-100"
-      src={table4}
+      src={produit.image_url[2]}
       alt="Third slide"
     />
     </div>
@@ -54,25 +92,25 @@ return (
         </Col>
         <Col className="ms-5 me-5">
             <Row>
-                <Col><h3 className="titreproduct blibli">TABLE ANCIENNE</h3></Col>
-                <Col><h3 className="titreproduct">200€</h3></Col>
+                <Col><h3 className="titreproduct blibli">{produit.name}</h3></Col>
+                <Col><h3 className="titreproduct">{produit.price}€</h3></Col>
                 <Col><h3 className="titreproduct">FAVORIS</h3></Col>
             </Row>
             <Row className="mt-5">
                 <h4>Description</h4>
-                <h6>TABLE</h6>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis architecto vitae quam enim et explicabo deserunt similique expedita vero, deleniti hic, magnam suscipit obcaecati itaque sit in dolores aut voluptatum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae inventore magnam animi nemo. Unde hic quaerat sunt sequi architecto. Vitae animi eum neque eligendi deleniti molestiae quisquam accusamus accusantium eius?</p>
-                <p></p>
+                <h6>{produit.type.toUpperCase()}</h6>
+                <p>{produit.description}</p>
+                <p></p>s
             </Row>
             <Row>
                 <Col>
                     <Row>
-                        <Col><p><strong>Dimensions:</strong> h:60cm l:180cm p:200cm</p></Col>
-                        <Col><p><strong>Matériaux:</strong> bois</p></Col>
+                        <Col><p><strong>Dimensions: </strong>{produit.size}</p></Col>
+                        <Col><p><strong>Matériaux: </strong>{produit.material[0]}, {produit.material[1]}</p></Col>
                     </Row>
                     <Row>
-                        <Col><p><strong>Couleurs:</strong> bois</p></Col>
-                        <Col><p><strong>Catégorie:</strong> table</p></Col>
+                        <Col><p><strong>Couleurs: </strong> {produit.color}</p></Col>
+                        <Col><p><strong>Catégorie: </strong>{produit.type}</p></Col>
                     </Row>
                 </Col>
             </Row>
@@ -87,6 +125,7 @@ return (
 
 )
 
+}
 }
 
 export default Product;

@@ -49,8 +49,8 @@ const Cards = (props) => {
                                 <Card key={item.id}  className='card' style={{ width: '25rem' }} >
                                     {/* Type de meuble */}
                                     <Card.Title className='type_card'>{item.name}</Card.Title>
-                                    <div className="img_card align-items-center justify-content-center">
-                                        <Card.Img id={item.id} variant="top" src={item.image_url[0]} onClick={props.toto}/>
+                                    <div className="img_card align-items-center justify-content-center" onClick={()=> props.getIdProduct(item.id)}>
+                                        <Card.Img variant="top" src={item.image_url[0]} onClick={props.toto}/>
                                     </div >
                                     <Card.Body>
                                         {/* Titre du meuble*/}
